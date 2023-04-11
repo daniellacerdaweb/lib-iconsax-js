@@ -900,6 +900,7 @@ import { IconWifiSquare } from './components/Icon/wifiSquare'
 import { IconWind } from './components/Icon/wind'
 import { IconWind2 } from './components/Icon/wind2'
 import { IconWoman } from './components/Icon/woman'
+import { IconBuildings5 } from './components/Icon/buildings5';
 
 const list = [
   { name: <Icon24Support />, title: 'Icon24Support ' },
@@ -1039,6 +1040,8 @@ const list = [
   { name: <IconBuilding4 />, title: 'IconBuilding4 ' },
   { name: <IconBuildings />, title: 'IconBuildings ' },
   { name: <IconBuildings2 />, title: 'IconBuildings2 ' },
+  { name: <IconBuildings5 />, title: 'IconBuildings5 ' },
+
   { name: <IconBuliding />, title: 'IconBuliding ' },
   { name: <IconBus />, title: 'IconBus ' },
   { name: <IconBuyCrypto />, title: 'IconBuyCrypto ' },

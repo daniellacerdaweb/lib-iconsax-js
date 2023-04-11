@@ -1861,13 +1861,14 @@ export const ListIcons = () => {
               >
                 <Box sx={{ textAlign: 'center' }}> {data.title}</Box>
                 <Box sx={{ textAlign: 'center' }}> {data.name}</Box>
-                <Box sx={{ textAlign: 'center', display:'flex',  width:'100%', justifyContent:'space-between' }}>
-                <Box sx={{ textAlign: 'center', background:'#676767', color:'#fff', padding:'3px', borderRadius:'6px',cursor:'pointer' }}   
+                <hr />
+                <Box sx={{ textAlign: 'center', display:'flex',  width:'100%', justifyContent:'space-between' ,borderRadius:'16px', marginTop:'5px' }}>
+                <Box sx={{ textAlign: 'center', padding:'3px', borderRadius:'6px',cursor:'pointer' }}   
                 onClick={() => {
                   setOpen(data.title)
                   navigator.clipboard.writeText(`<${data.title} />`)
-                }}> Copy</Box>
-                <Box sx={{ textAlign: 'center', background:'#676767', color:'#fff', padding:'3px', borderRadius:'6px', cursor:'pointer' }}
+                }}> <IconDocumentCopy  /></Box>
+                <Box sx={{ textAlign: 'center', padding:'3px', borderRadius:'6px', cursor:'pointer' }}
                   onClick={() => {
                     var svgData = data.name;
                     const svgString = ReactDOMServer.renderToStaticMarkup(svgData);
@@ -1882,8 +1883,20 @@ export const ListIcons = () => {
                     console.log(svgData)
                     // setOpen(data.title)
                     // navigator.clipboard.writeText(`<${data.title} />`)
-                  }}> SVG</Box>
+                  }}><IconDocumentDownload  /></Box>
+
+<Box sx={{ textAlign: 'center', padding:'3px', borderRadius:'6px', cursor:'pointer' }}
+                  onClick={() => {
+                    setOpen(`${data.title} SVG`)
+
+                    var svgData = data.name;
+                    const svgString = ReactDOMServer.renderToString(svgData);
+                    // var svgBlob = new Blob([svgString], {type:"image/svg+xml;charset=utf-8"});
+                    navigator.clipboard.writeText(svgString)
+                  }}>  <IconGalleryExport  /></Box>
                 </Box>
+
+                
               </Box>
             )
           })}
